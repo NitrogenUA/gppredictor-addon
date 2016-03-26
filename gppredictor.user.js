@@ -7,7 +7,7 @@
 // @match        http://gppredictor.com/league/show/id/*/code/*
 // @run-at       document-end
 // @grant        none
-// @updateURL    https://userscripts.org/scripts/source/111519.meta.js
+// @updateURL    https://raw.githubusercontent.com/NitrogenUA/gppredictor-addon/master/gppredictor.user.js
 // ==/UserScript==
 /* jshint -W097 */
 'use strict';
