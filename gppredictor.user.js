@@ -72,7 +72,7 @@ function MainRoutine(raceResults) {
   var asyncCounter = 0;
   var leaguePredictions = new Array();
   //Get profile links for all league members
-  var profileLinks = $("div#tabs-1 table.leaderboard > tbody > tr > a");
+  var profileLinks = $("div#tabs-1 table.leaderboard > tbody > tr > td > a");
   profileLinks.each(function (index) {
     GetLeaguePrediction($(this).attr('href'), index);
   });
