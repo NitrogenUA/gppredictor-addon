@@ -102,7 +102,8 @@ function MainRoutine(raceResults) {
         //get predicted driver position
         var position = $("> div.placing-number", this)[0].textContent;
         //retrieve driver lastname
-        var driverName = $("div.drivertext > span:first-of-type", this)[0].textContent;
+        var driverName = $("div.drivertext > span:first-of-type", this)[0];
+        driverName = (driverName === undefined) ? "" : driverName.textContent;
         predictions[position] = driverName;
       });
       //Get prediction extras - pole sitter, fastest lap poster and the driver who gained the most positions.
