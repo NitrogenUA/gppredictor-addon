@@ -2,6 +2,7 @@
 
 ### Description
 A userscript for the [gppredictor website](http://gppredictor.com/), which presents a user with an estimate on how much points they will receive based of their predictions.
+
 ![Like this](https://github.com/NitrogenUA/gppredictor-addon/blob/master/example.png)
 
 ### Features
@@ -31,7 +32,8 @@ Original author of this software is affiliated with neither Autosport nor gppred
 not sure about math on gppredictor's side.
 
 ### Additional information
-gppredictor website: http://gppredictor.com/
+[gppredictor website](http://gppredictor.com/)
+
 Initially tested and indicated no issues on:
 * Chrome 49/Tampermonkey 3
 * Firefox 45/Greasemonkey 3.7
