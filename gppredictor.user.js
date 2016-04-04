@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Estimated points for gppredictor
 // @namespace    https://github.com/NitrogenUA/gppredictor-addon
-// @version      1.0
+// @version      1.1
 // @description  Attempts to estimate league points every user will get based of their predictions.
 // @author       Nitrogen
 // @match        http://gppredictor.com/league/show/id/*/code/*
