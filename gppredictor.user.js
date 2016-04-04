@@ -73,20 +73,22 @@ function MainRoutine(raceResults) {
   var leaguePredictions = new Array();
   //Get profile links for all league members
   var profileLinks = $("div#tabs-1 table.leaderboard > tbody > tr > td > a");
+  var url = "http://gppredictor.com/ajax/race";
   profileLinks.each(function (index) {
-    GetLeaguePrediction($(this).attr('href'), index);
+    var userId = $($(this).attr('href').split("/")).get(-1);
+    GetLeaguePrediction(url, raceId, userId, index);
   });
 
-  function GetLeaguePrediction(url, i) {
+  function GetLeaguePrediction(url, raceId, userId, i) {
     var tempContainer = document.createElement('div');
     tempContainer.id = "temp-container" + i;
     tempContainer.className = "hidden";
     document.body.appendChild(tempContainer);
     var context = $("#temp-container" + i);
-    context.load(url + " #myperformance-cont", function () {
+    context.load(url, {id: raceId, user: userId}, function () {
       var predictions = new Array();
       //Get profile predictions, positions 1 through 3.
-      $("> #myperformance-cont div.minicontainer > div.minipodium", context).each(function () {
+      $("> div.minicontainer > div.minipodium", context).each(function () {
         //retrieving positions numbers
         var positionIndices = new Array();
         $("> div[class*=minipos_]", this).each(function () {
@@ -98,7 +100,7 @@ function MainRoutine(raceResults) {
         });
       });
       //Get profile predictions, positions 4 through 10.
-      $("> #myperformance-cont div.minicontainer > div.listcontainer > div[class*=minilist]", context).each(function () {
+      $("> div.minicontainer > div.listcontainer > div[class*=minilist]", context).each(function () {
         //get predicted driver position
         var position = $("> div.placing-number", this)[0].textContent;
         //retrieve driver lastname
@@ -115,7 +117,7 @@ function MainRoutine(raceResults) {
         if ($("h2", this)[0].textContent === "POSITIONSGAINED")
           predictions['positionsGained'] = $("div.nametag", this)[0].textContent.split(" ")[1].toUpperCase();
       });
-      leaguePredictions[url] = predictions;
+      leaguePredictions[userId] = predictions;
       asyncCounter++;
       if (debug) {
         time = new Date() - currentDate;
@@ -229,7 +231,7 @@ function MainRoutine(raceResults) {
       var currentPoints = $("td", this).filter(function () {
         return this.textContent.length !== 0;
       }).get(-1).textContent;
-      var key = $("a", this).attr('href');
+      var key = $($("a", this).attr('href').split("/")).get(-1);
       var myCell = this.insertCell(-1);
       $(myCell).css({color: "#00cc00"});
       myCell.innerHTML = "+" + leaguePredictions[key]['points'];
