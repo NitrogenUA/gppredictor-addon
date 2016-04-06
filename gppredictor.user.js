@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Estimated points for gppredictor
 // @namespace    https://github.com/NitrogenUA/gppredictor-addon
-// @version      1.1
+// @version      1.0.2
 // @description  Attempts to estimate league points every user will get based of their predictions.
 // @author       Nitrogen
-// @match        http://gppredictor.com/league/show/id/*/code/*
+// @match        *://gppredictor.com/league/show/id/*/code/*
 // @run-at       document-end
 // @grant        none
 // @updateURL    https://raw.githubusercontent.com/NitrogenUA/gppredictor-addon/master/gppredictor.user.js
@@ -16,6 +16,7 @@ var currentDate = new Date(), time, debug = false, pointsCalculatedFlag;
 //Removing top banner
 $("#leaderboard").empty(); //Comment this line if you'd like the banner to stay.
 //$("#leaderboardwrapper").remove(); //Use this instead to remove top block altogether.
+$("#social").toggleClass("hidden");  //hide FB like-button.
 
 //Determine the latest round completed.
 var raceId;
@@ -73,7 +74,7 @@ function MainRoutine(raceResults) {
   var leaguePredictions = new Array();
   //Get profile links for all league members
   var profileLinks = $("div#tabs-1 table.leaderboard > tbody > tr > td > a");
-  var url = "http://gppredictor.com/ajax/race";
+  var url = "/ajax/race";
   profileLinks.each(function (index) {
     var userId = $($(this).attr('href').split("/")).get(-1);
     GetLeaguePrediction(url, raceId, userId, index);
