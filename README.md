@@ -6,10 +6,10 @@ A userscript for the [gppredictor website](http://gppredictor.com/), which prese
 ![Like this](https://github.com/NitrogenUA/gppredictor-addon/blob/master/example.png)
 
 ### Features
-* removes the banner from the top of the league page
-* estimates league points you will receive based of your prediction
-* calculates overall total points for each league member, according to estimated points gained
-* sorts the table to reflect total points estimated.
+* Removes the banner from the top of the league page and hides the FB like-button.
+* Estimates league points you will receive based of your prediction.
+* Calculates overall total points for each league member, according to estimated points gained.
+* Sorts the table to reflect total points estimated.
 
 ### Background
 As I was getting excited about the start of the 2016 F1 season friends invited me to take part in the F1 fantasy league at Autosport's GRAND PRIX PREDICTOR. I was having great fun with it, but when the time to reap the points came I found myself slightly disappointed realizing it might take from hours to days for the points to be calculated and put into the system. So I proceeded to code a solution around that. In retrospect - it took roughly 14-15 hours for points for australian GP to appear on the site, so it wasn't a terrible delay really. A that point, though, I was minutes away from finishing first functional draft of this script. And I knew it will still be useful for the next race and the ones after it. So I went on and finished it and now sharing it with the world. Although 'finished' might be an overstatement in this case as the work is still ongoing.
@@ -29,8 +29,7 @@ The script initially checks wether gppredictor has posted the points for the lat
 Debug mode enables you to see additional debug output inside your browser's DevTool/JS console. To enable debug mode set the global variable 'debug' with 'true' value. It is set to 'false' by default. Additionally debug mode allows you to force the script to calculate the points regardless of wether gppredictor website has posted the points for the latest GP or not.
 
 ### Disclaimer
-Original author of this software is affiliated with neither Autosport nor gppredictor websites. This software is originally intended for entertainment purposes and is meant as way to enrich your gppredictor experience. It might contain bugs or produce undesirable websites/browser behavior. Use it at your own risk. For copyright notice and license information see the LICENSE file included.
-not sure about math on gppredictor's side.
+Original author of this software is affiliated with neither Autosport nor gppredictor websites. This software is originally intended for entertainment purposes and is meant as a way to enrich your gppredictor experience. It might contain bugs or produce unsatisfactory web experience. Use it at your own risk. For copyright notice and license information see the LICENSE file included.
 
 ### Additional information
 [gppredictor website](http://gppredictor.com/)
